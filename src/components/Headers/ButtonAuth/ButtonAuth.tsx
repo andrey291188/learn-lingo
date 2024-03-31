@@ -15,7 +15,7 @@ const routes = [{ path: "favorites", name: "Favorites" }];
 export default function ButtonAuth({ user }: ButtonAuthType) {
   return (
     <>
-      {user ? (
+      {!user ? (
         <>
           <StyledButtonLogInOut>
             <CiLogin size={20} color="rgb(244, 197, 80)" className="icon" />
@@ -25,15 +25,15 @@ export default function ButtonAuth({ user }: ButtonAuthType) {
         </>
       ) : (
         <>
-          <StyledButtonLogInOut>
-            <CiLogout size={20} color="rgb(244, 197, 80)" className="icon" />
-            Log Out
-          </StyledButtonLogInOut>
           <ul>
             {routes.map(({ path, name }) => (
               <NavigationLink path={path} name={name} key={name} />
             ))}
           </ul>
+          <StyledButtonLogInOut>
+            <CiLogout size={20} color="rgb(244, 197, 80)" className="icon" />
+            Log Out
+          </StyledButtonLogInOut>
         </>
       )}
     </>

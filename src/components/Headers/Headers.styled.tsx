@@ -60,4 +60,5 @@ export const StyledHeaders = styled.header`
   .pop-up {
 
   }
+
 `;

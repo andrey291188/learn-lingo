@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { StyledLink } from "./NavigationLink.styled";
 
 interface NavigationLinkType {
   path: string;
@@ -6,9 +6,10 @@ interface NavigationLinkType {
 }
 
 export default function NavigationLink({ path, name }: NavigationLinkType) {
+
   return (
     <li>
-      <NavLink to={path}>{name}</NavLink>
+      <StyledLink to={path}>{name}</StyledLink>
     </li>
   );
 }

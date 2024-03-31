@@ -7,6 +7,8 @@ export const StyledButtonLogInOut = styled.button`
   text-decoration: none;
   margin-right: 8px;
   color: rgb(18, 20, 23);
+  padding-top: 14px;
+  padding-bottom: 14px;
 
   font-size: 16px;
   font-weight: 700;
@@ -17,7 +19,7 @@ export const StyledButtonLogInOut = styled.button`
   justify-content: center;
   align-items: center;
   .icon {
-    margin-right: 8px;
+    margin-right: 4px;
   }
 `;
 

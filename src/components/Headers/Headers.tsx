@@ -15,10 +15,13 @@ const routes = [
 function Headers() {
   const [isWideScreen, setIsWideScreen] = useState(false);
   const [isVisiblePopUp, setIsVisiblePopUp] = useState(false);
+  const [isUser, setIsUser] = useState(false);
+
+  
 
   useEffect(() => {
     const handleResize = () => {
-      setIsWideScreen(window.innerWidth > 530);
+      setIsWideScreen(window.innerWidth > 600);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -41,7 +44,7 @@ function Headers() {
             ))}
           </ul>
           <div className="btn-group">
-            <ButtonAuth user={false} />
+            <ButtonAuth user={isUser} />
           </div>
         </nav>
       ) : (
@@ -56,12 +59,12 @@ function Headers() {
       {isVisiblePopUp && (
         <Modal toggleModal={setIsVisiblePopUp}>
           <PopUp>
-            
+            <ul>
               {routes.map(({ path, name }) => (
                 <NavigationLink path={path} name={name} key={name} />
               ))}
-           
-            <ButtonAuth user={false} />
+            </ul>
+            <ButtonAuth user={isUser} />
           </PopUp>
         </Modal>
       )}
