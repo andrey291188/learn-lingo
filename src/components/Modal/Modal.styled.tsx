@@ -7,5 +7,5 @@ export const StyledModalContainer = styled.div`
     right: 0;
     bottom: 0;
     overflow: auto;
-
+    z-index: 1000;
 `

@@ -17,8 +17,6 @@ function Headers() {
   const [isVisiblePopUp, setIsVisiblePopUp] = useState(false);
   const [isUser, setIsUser] = useState(false);
 
-  
-
   useEffect(() => {
     const handleResize = () => {
       setIsWideScreen(window.innerWidth > 600);

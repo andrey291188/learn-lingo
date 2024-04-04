@@ -12,6 +12,7 @@ export const StyledPopUpContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  background-color: white;
   
   ul > li > a {
     display: block;
