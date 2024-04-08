@@ -4,11 +4,9 @@ import Home from "./pages/Home/Home";
 import Teachers from "./pages/Teachers/Teachers";
 import User from "./pages/User/User";
 import Favorites from "./pages/Favorites/Favorites";
-// import teachers from "./service/teachers.json"
-
 
 function App() {
-  // console.log(teachers)
+
   return (
     <Routes>
      <Route path="/" element={<Layout/>}>

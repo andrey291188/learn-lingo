@@ -8,16 +8,17 @@ import NavigationLink from "../NavigationLink/NavigationLink";
 
 interface ButtonAuthType {
   user: boolean;
+  authUser: () => void
 }
 
 const routes = [{ path: "favorites", name: "Favorites" }];
 
-export default function ButtonAuth({ user }: ButtonAuthType) {
+export default function ButtonAuth({ user, authUser}: ButtonAuthType) {
   return (
     <>
       {!user ? (
         <>
-          <StyledButtonLogInOut>
+          <StyledButtonLogInOut onClick={() => authUser()}>
             <CiLogin size={20} color="rgb(244, 197, 80)" className="icon" />
             Log in
           </StyledButtonLogInOut>
@@ -30,7 +31,7 @@ export default function ButtonAuth({ user }: ButtonAuthType) {
               <NavigationLink path={path} name={name} key={name} />
             ))}
           </ul>
-          <StyledButtonLogInOut>
+          <StyledButtonLogInOut onClick={() => authUser()}>
             <CiLogout size={20} color="rgb(244, 197, 80)" className="icon" />
             Log Out
           </StyledButtonLogInOut>

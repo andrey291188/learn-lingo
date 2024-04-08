@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const StyledSectionHomePage = styled.section`
   max-width: 1312px;
-  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 
   .container {
     display: flex;
@@ -13,7 +14,7 @@ export const StyledSectionHomePage = styled.section`
 
   .desc {
     width: 720px;
-    
+
     padding-top: 98px;
     padding-bottom: 98px;
     padding-left: 64px;
@@ -63,8 +64,7 @@ export const StyledSectionHomePage = styled.section`
   }
 
   .btn-get-str {
-    width: 267px;
-    height: 60px;
+    padding: 18px 6.1vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,7 +82,6 @@ export const StyledSectionHomePage = styled.section`
   .picture {
     position: relative;
     width: 568px;
-    height: 530px;
     border-radius: 30px;
     background-color: rgb(203, 222, 211);
     overflow: hidden;
@@ -90,13 +89,13 @@ export const StyledSectionHomePage = styled.section`
 
   .head-girl {
     position: absolute;
-    top: 80px;
+    bottom: 111px;
     left: 50%;
     transform: translate(-50%, 0);
   }
   .svg-mac {
     position: absolute;
-    top: 354px;
+    bottom: -128px;
     left: 50%;
     transform: translate(-50%, 0);
     width: 391px;
@@ -109,12 +108,11 @@ export const StyledSectionHomePage = styled.section`
     border: 1.5px dashed rgb(159, 186, 174);
     border-radius: 30px;
     width: 100%;
-
+    padding: 0 7.5vw;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    column-gap: 100px;
-    align-items: center;
+    justify-content: space-between;
+    /* column-gap: 100px; */
   }
 
   .statistic > li {
@@ -122,9 +120,9 @@ export const StyledSectionHomePage = styled.section`
     align-items: center;
   }
 
+
   .statistic > li > h5 {
-  
-    padding: 40px 0;
+    margin: 40px 0;
     font-weight: 500;
     font-size: 28px;
     line-height: 1.14;
@@ -133,7 +131,7 @@ export const StyledSectionHomePage = styled.section`
   }
 
   .statistic > li > p {
-    width: 96px;
+    width: 76px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.29;
@@ -141,12 +139,11 @@ export const StyledSectionHomePage = styled.section`
   }
 
   @media only screen and (max-width: 1220px) {
-
-    .statistic {
+    /* .statistic {
       padding-left: 25px;
       padding-right: 25px;
       column-gap: 40px;
-    }
+    } */
   }
 
   @media only screen and (max-width: 1069px) {
@@ -164,13 +161,14 @@ export const StyledSectionHomePage = styled.section`
 
     .picture {
       width: 100%;
+      height: 530px;
     }
-
   }
 
   @media only screen and (max-width: 909px) {
     .statistic {
       flex-wrap: wrap;
+      justify-content: center;
       column-gap: 30px;
     }
   }
@@ -179,9 +177,9 @@ export const StyledSectionHomePage = styled.section`
     .desc {
       padding-left: 15px;
       padding-right: 15px;
-      text-align: center;
     }
     .statistic {
+      padding: 0 15px;
       column-gap: 20px;
     }
   }

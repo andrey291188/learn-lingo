@@ -2,10 +2,14 @@ import styled from "styled-components";
 
 export const StyledHeaders = styled.header`
   max-width: 1184px;
-  display: flex;
-  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
 
   .nav-list {
     width: 100%;
@@ -58,7 +62,5 @@ export const StyledHeaders = styled.header`
   }
 
   .pop-up {
-
   }
-
 `;

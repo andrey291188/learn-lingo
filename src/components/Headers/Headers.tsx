@@ -31,6 +31,10 @@ function Headers() {
     setIsVisiblePopUp(true);
   };
 
+  const authUser = () => {
+    setIsUser(!isUser)
+  }
+
   return (
     <StyledHeaders>
       {isWideScreen ? (
@@ -42,7 +46,7 @@ function Headers() {
             ))}
           </ul>
           <div className="btn-group">
-            <ButtonAuth user={isUser} />
+            <ButtonAuth user={isUser} authUser={authUser}/>
           </div>
         </nav>
       ) : (
@@ -62,7 +66,7 @@ function Headers() {
                 <NavigationLink path={path} name={name} key={name} />
               ))}
             </ul>
-            <ButtonAuth user={isUser} />
+            <ButtonAuth user={isUser} authUser={authUser}/>
           </PopUp>
         </Modal>
       )}
