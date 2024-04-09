@@ -110,12 +110,13 @@ export const StyledCardRender = styled.li`
     color: rgb(138, 138, 137);
   }
 
-  .description-list > li > p:last-child {
+  .description-list > li:last-child > p {
     margin-top: 16px;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
     color: rgb(18, 20, 23);
+    margin-bottom: 32px;
   }
 
   .description-list > li > p > span {
@@ -136,7 +137,7 @@ export const StyledCardRender = styled.li`
     margin-top: 16px;
     font-size: 16px;
     font-weight: 500;
-    line-height: 1,5;
+    line-height: 1, 5;
   }
 
   .list-level {
@@ -155,9 +156,9 @@ export const StyledCardRender = styled.li`
     border-radius: 35px;
   }
 
-   .list-level > li > p {
+  .list-level > li > p {
     display: block;
-   text-align: center;
+    text-align: center;
   }
 
   .list-level > li:not(:last-child) {
@@ -169,4 +170,54 @@ export const StyledCardRender = styled.li`
     border: 1px solid rgb(244, 197, 80);
   }
 
+  .reviews > li:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  .reviews > li > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .reviews > li > div > img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+
+  .reviews > li > div > div > h4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: rgb(138, 138, 137);
+  }
+
+  .reviews > li > div > div > p {
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.29;
+    color: rgb(18, 20, 23);
+  }
+
+  .reviews > li > p:last-child {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: rgb(18, 20, 23);
+  }
+
+  .container-content > button {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.56;
+    color: rgb(18, 20, 23);
+    margin-top: 32px;
+    padding: 16px 48px;
+    background-color: rgb(244, 197, 80);
+    border: none;
+    border-radius: 12px;
+  }
 `;

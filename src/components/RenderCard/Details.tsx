@@ -11,43 +11,47 @@ interface DetailsType {
 }
 
 export const defaultImg =
-"https://netsh.pp.ua/wp-content/uploads/2017/08/Placeholder-1.png";
+  "https://netsh.pp.ua/wp-content/uploads/2017/08/Placeholder-1.png";
 
 export default function Details({ data, setVisibleDetails }: DetailsType) {
-
   const obJectIncluded = (id_: string) => {
-    return false
-      // return favoriteList.some(({ id }) => id === id_)
+    return false;
+    // return favoriteList.some(({ id }) => id === id_)
   };
-  
+
   const handleAddFavorite = (id_: string) => {
     // const [data] = catalogList.filter(({ id }) => id === id_);
     // dispatch(createFavorite(data));
   };
-  
+
   const handleDeleteFavorite = (id: string) => {
     // dispatch(deleteFavorit(id))
-  }
+  };
 
   const isOnline = () => {
     return Math.random() < 0.5;
-  }
+  };
 
   return (
     <StyledCardRender>
       <div className="container-avatar">
-       <img className="avatar"
-        src={data.avatar_url ? data.avatar_url : defaultImg}
-        alt={`Teacher ${data.name}`}
-      /> 
-      <span className={`status ${isOnline() ? "online" : ""}`}></span>
+        <img
+          className="avatar"
+          src={data.avatar_url ? data.avatar_url : defaultImg}
+          alt={`Teacher ${data.name}`}
+        />
+        <span className={`status ${isOnline() ? "online" : ""}`}></span>
       </div>
       <div className="container-content">
-      <div className="list-info">
+        <div className="list-info">
           <p>Languages</p>
           <ul>
             <li>
-              <IoBookOutline size={16} color="rgb(0, 0, 0)" className="icon-book"/>
+              <IoBookOutline
+                size={16}
+                color="rgb(0, 0, 0)"
+                className="icon-book"
+              />
               <p>Lessons online</p>
             </li>
             <span></span>
@@ -56,22 +60,39 @@ export default function Details({ data, setVisibleDetails }: DetailsType) {
             </li>
             <span></span>
             <li>
-            <FaStar size={16} color="rgb(255, 197, 49)" className="icon-star"/>
+              <FaStar
+                size={16}
+                color="rgb(255, 197, 49)"
+                className="icon-star"
+              />
               <p>Rating: {data.rating}</p>
             </li>
             <span></span>
-            <li>Price / 1 hour:<span>&nbsp;{data.price_per_hour}$</span></li>
             <li>
-            { !obJectIncluded(data.id) ?
-                <button className="favorite-button" onClick={() => {handleAddFavorite(data.id)}}
-                  type="button">
-                  <FaRegHeart size={26} color="rgb(18, 20, 23)"/>
-                </button> :
-                <button className="favorite-button" onClick={() => {handleDeleteFavorite(data.id)}}
-                type="button">
-                <FaHeart size={26} color="rgb(244, 197, 80)"/>
-              </button>
-              }
+              Price / 1 hour:<span>&nbsp;{data.price_per_hour}$</span>
+            </li>
+            <li>
+              {!obJectIncluded(data.id) ? (
+                <button
+                  className="favorite-button"
+                  onClick={() => {
+                    handleAddFavorite(data.id);
+                  }}
+                  type="button"
+                >
+                  <FaRegHeart size={26} color="rgb(18, 20, 23)" />
+                </button>
+              ) : (
+                <button
+                  className="favorite-button"
+                  onClick={() => {
+                    handleDeleteFavorite(data.id);
+                  }}
+                  type="button"
+                >
+                  <FaHeart size={26} color="rgb(244, 197, 80)" />
+                </button>
+              )}
             </li>
           </ul>
         </div>
@@ -85,37 +106,56 @@ export default function Details({ data, setVisibleDetails }: DetailsType) {
             <p>
               Speaks:&nbsp;
               {data.languages.map((data, index) => (
-                <span key={data.slice(0, 3)} className="underline">{index > 0 && ", "}{data}</span>
+                <span key={data.slice(0, 3)} className="underline">
+                  {index > 0 && ", "}
+                  {data}
+                </span>
               ))}
             </p>
           </li>
           <li>
-            <p>Lesson Info: <span>{data.lesson_info}</span></p>
+            <p>
+              Lesson Info: <span>{data.lesson_info}</span>
+            </p>
           </li>
           <li>
             <p>
-              Conditions: {data.conditions.map((data) => (
+              Conditions:{" "}
+              {data.conditions.map((data) => (
                 <span key={data.slice(0, 3)}>&nbsp;{data}</span>
               ))}
             </p>
           </li>
           <li>
-            <button type="button" className="underline" onClick={() => setVisibleDetails("")}>
+            <button
+              type="button"
+              className="underline"
+              onClick={() => setVisibleDetails("")}
+            >
               Remove details
             </button>
           </li>
-           <li>
-            <p>
-              {data.experience}
-            </p>
+          <li className="expirience">
+            <p>{data.experience}</p>
           </li>
         </ul>
-        <ul>
-          {data.reviews.map((data)=>(
+        <ul className="reviews">
+          {data.reviews.map((data) => (
             <li key={data.reviewer_name}>
-              <img src={defaultImg} alt={`Reviewer ${data.reviewer_name}`} />
-              <h4>{data.reviewer_name}</h4>
-              <p>{data.reviewer_rating}</p>
+              <div>
+                <img src={defaultImg} alt={`Reviewer ${data.reviewer_name}`} />
+                <div>
+                  <h4>{data.reviewer_name}</h4>
+                  <p>
+                    <FaStar
+                      size={16}
+                      color="rgb(255, 197, 49)"
+                      className="icon-star"
+                    />
+                    <span>{data.reviewer_rating}</span>
+                  </p>
+                </div>
+              </div>
               <p>{data.comment}</p>
             </li>
           ))}
@@ -127,6 +167,7 @@ export default function Details({ data, setVisibleDetails }: DetailsType) {
             </li>
           ))}
         </ul>
+        <button>Book trial lesson</button>
       </div>
     </StyledCardRender>
   );
