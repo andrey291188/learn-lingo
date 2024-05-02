@@ -61,8 +61,8 @@ const isOnline = () => {
             </li>
             <span></span>
             <li>Price / 1 hour:<span>&nbsp;{data.price_per_hour}$</span></li>
-            <li>
-            { !obJectIncluded(data.id) ?
+          </ul>
+          { !obJectIncluded(data.id) ?
                 <button className="favorite-button" onClick={() => {handleAddFavorite(data.id)}}
                   type="button">
                   <FaRegHeart size={26} color="rgb(18, 20, 23)"/>
@@ -72,8 +72,6 @@ const isOnline = () => {
                 <FaHeart size={26} color="rgb(244, 197, 80)"/>
               </button>
               }
-            </li>
-          </ul>
         </div>
         <ul className="description-list">
           <li>

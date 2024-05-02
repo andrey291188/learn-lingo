@@ -112,14 +112,13 @@ export const StyledSectionHomePage = styled.section`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* column-gap: 100px; */
+    column-gap: 20px;
   }
 
   .statistic > li {
     display: flex;
     align-items: center;
   }
-
 
   .statistic > li > h5 {
     margin: 40px 0;
@@ -131,19 +130,10 @@ export const StyledSectionHomePage = styled.section`
   }
 
   .statistic > li > p {
-    width: 76px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.29;
     color: rgba(18, 20, 23, 0.7);
-  }
-
-  @media only screen and (max-width: 1220px) {
-    /* .statistic {
-      padding-left: 25px;
-      padding-right: 25px;
-      column-gap: 40px;
-    } */
   }
 
   @media only screen and (max-width: 1069px) {
@@ -169,7 +159,6 @@ export const StyledSectionHomePage = styled.section`
     .statistic {
       flex-wrap: wrap;
       justify-content: center;
-      column-gap: 30px;
     }
   }
 
@@ -182,5 +171,6 @@ export const StyledSectionHomePage = styled.section`
       padding: 0 15px;
       column-gap: 20px;
     }
+    
   }
 `;

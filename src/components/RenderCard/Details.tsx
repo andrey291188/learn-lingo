@@ -71,8 +71,8 @@ export default function Details({ data, setVisibleDetails }: DetailsType) {
             <li>
               Price / 1 hour:<span>&nbsp;{data.price_per_hour}$</span>
             </li>
-            <li>
-              {!obJectIncluded(data.id) ? (
+          </ul>
+          {!obJectIncluded(data.id) ? (
                 <button
                   className="favorite-button"
                   onClick={() => {
@@ -93,8 +93,6 @@ export default function Details({ data, setVisibleDetails }: DetailsType) {
                   <FaHeart size={26} color="rgb(244, 197, 80)" />
                 </button>
               )}
-            </li>
-          </ul>
         </div>
         <ul className="description-list">
           <li>

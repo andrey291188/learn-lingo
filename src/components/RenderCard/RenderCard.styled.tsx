@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledCardRender = styled.li`
   display: flex;
+  position: relative;
   padding: 24px;
   margin-top: 32px;
   border-radius: 24px;
@@ -51,12 +52,14 @@ export const StyledCardRender = styled.li`
   }
 
   .list-info > p {
+    margin-right: 20px;
     color: rgb(138, 138, 137);
   }
 
   .list-info > ul {
     display: flex;
     align-items: center;
+    margin-right: 90px;
   }
 
   .list-info > ul > li {
@@ -81,14 +84,16 @@ export const StyledCardRender = styled.li`
     border: 1px solid rgba(18, 20, 23, 0.2);
   }
 
-  .list-info > ul > li > button {
+  .list-info > button {
     display: flex;
     align-items: center;
+    position: absolute;
+    top: 24px;
+    right: 24px;
     background: none;
     border: none;
     color: inherit;
     text-decoration: none;
-    margin-left: 64px;
   }
 
   .list-info > ul > li > span {
@@ -142,6 +147,8 @@ export const StyledCardRender = styled.li`
 
   .list-level {
     display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-top: 32px;
   }
 
@@ -159,10 +166,6 @@ export const StyledCardRender = styled.li`
   .list-level > li > p {
     display: block;
     text-align: center;
-  }
-
-  .list-level > li:not(:last-child) {
-    margin-right: 8px;
   }
 
   .list-level > li:first-child {
@@ -219,5 +222,47 @@ export const StyledCardRender = styled.li`
     background-color: rgb(244, 197, 80);
     border: none;
     border-radius: 12px;
+  }
+
+  @media only screen and (max-width: 1220px) {
+    .list-info {
+      flex-wrap: wrap;
+    }
+
+    .list-info > ul {
+      margin-right: 90px;
+    }
+  }
+
+  @media only screen and (max-width: 1100px) {
+    .list-info > ul {
+      flex-wrap: wrap;
+      margin-right: 60px;
+    }
+  }
+
+  @media only screen and (max-width: 724px) {
+    flex-wrap: wrap;
+
+    .container-avatar {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .list-info > ul {
+      justify-content: center;
+      margin-right: 0px;
+    }
+    .list-info {
+      justify-content: center;
+    }
+
+    .list-info > p {
+      margin-right: 0px;
+    }
+
+    .list-level {
+      justify-content: center;
+    }
   }
 `;

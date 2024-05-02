@@ -25,19 +25,19 @@ function Home() {
       <ul className="statistic">
         <li>
           <h5>32,000 +</h5>
-          <p>Experienced tutors</p>
+          <p>Experienced<br /> tutors</p> 
         </li>
         <li>
           <h5>300,000 +</h5>
-          <p>5-star tutor reviews</p>
+          <p>5-star tutor<br /> reviews</p>
         </li>
         <li>
           <h5>120 +</h5>
-          <p>Subjects taught</p>
+          <p>Subjects<br /> taught</p>
         </li>
         <li>
           <h5>200 +</h5>
-          <p>Tutor nationalities</p>
+          <p>Tutor<br /> nationalities</p>
         </li>
       </ul>
     </StyledSectionHomePage>
