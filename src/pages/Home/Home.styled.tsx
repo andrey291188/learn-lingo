@@ -4,8 +4,6 @@ export const StyledSectionHomePage = styled.section`
   max-width: 1312px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
 
   .container {
     display: flex;
@@ -14,7 +12,6 @@ export const StyledSectionHomePage = styled.section`
 
   .desc {
     width: 720px;
-
     padding-top: 98px;
     padding-bottom: 98px;
     padding-left: 64px;

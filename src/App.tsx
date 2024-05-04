@@ -4,6 +4,8 @@ import Home from "./pages/Home/Home";
 import Teachers from "./pages/Teachers/Teachers";
 import User from "./pages/User/User";
 import Favorites from "./pages/Favorites/Favorites";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 
 function App() {
 
@@ -14,6 +16,8 @@ function App() {
       <Route path="teachers" element={<Teachers/>}/>
       <Route path="user" element={<User/>}/>
       <Route path="favorites" element={<Favorites/>}/>
+      <Route path="login" element={<Login/>}/>
+      <Route path="register" element={<Register/>}/>
      </Route>
     </Routes>
   );

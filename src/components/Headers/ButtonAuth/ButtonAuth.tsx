@@ -5,6 +5,7 @@ import {
   StyledButtonRegistration,
 } from "./ButtonAuth.styled";
 import NavigationLink from "../NavigationLink/NavigationLink";
+import { useNavigate } from "react-router-dom";
 
 interface ButtonAuthType {
   user: boolean;
@@ -14,15 +15,20 @@ interface ButtonAuthType {
 const routes = [{ path: "favorites", name: "Favorites" }];
 
 export default function ButtonAuth({ user, authUser}: ButtonAuthType) {
+  const navigate = useNavigate();
+
+  const navigateTo = (value: string) => {
+    navigate(`${value}`)
+  } 
   return (
     <>
       {!user ? (
         <>
-          <StyledButtonLogInOut onClick={() => authUser()}>
+          <StyledButtonLogInOut onClick={() => navigateTo("login")}>
             <CiLogin size={20} color="rgb(244, 197, 80)" className="icon" />
             Log in
-          </StyledButtonLogInOut>
-          <StyledButtonRegistration>Registartion</StyledButtonRegistration>
+          </StyledButtonLogInOut >
+          <StyledButtonRegistration onClick={() => navigateTo("register")}>Registartion</StyledButtonRegistration>
         </>
       ) : (
         <>
