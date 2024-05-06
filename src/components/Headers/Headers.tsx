@@ -35,9 +35,10 @@ function Headers() {
     setIsVisiblePopUp(true);
   };
 
-  // const authUser = () => {
-  //   setIsUser(!isUser);
-  // };
+  const authUser = () => {
+    setIsUser(!isUser);
+  };
+  console.log(authUser)
 
   return (
     <StyledHeaders>
