@@ -115,7 +115,7 @@ export const StyledCardRender = styled.li`
     color: rgb(138, 138, 137);
   }
 
-  .description-list > li:last-child > p {
+  .description-list .expirience > p {
     margin-top: 16px;
     font-size: 16px;
     font-weight: 400;

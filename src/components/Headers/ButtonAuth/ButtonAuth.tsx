@@ -5,30 +5,31 @@ import {
   StyledButtonRegistration,
 } from "./ButtonAuth.styled";
 import NavigationLink from "../NavigationLink/NavigationLink";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 interface ButtonAuthType {
   user: boolean;
-  authUser: () => void
+  setRegisterVisibleForm: (value: boolean) => void;
+  setLoginVisibleForm: (value: boolean) => void
 }
 
 const routes = [{ path: "favorites", name: "Favorites" }];
 
-export default function ButtonAuth({ user, authUser}: ButtonAuthType) {
-  const navigate = useNavigate();
+export default function ButtonAuth({ user, setRegisterVisibleForm, setLoginVisibleForm}: ButtonAuthType) {
+  // const navigate = useNavigate();
 
-  const navigateTo = (value: string) => {
-    navigate(`${value}`)
-  } 
+  // const navigateTo = (value: string) => {
+  //   navigate(`${value}`)
+  // } 
   return (
     <>
       {!user ? (
         <>
-          <StyledButtonLogInOut onClick={() => navigateTo("login")}>
+          <StyledButtonLogInOut onClick={() => setLoginVisibleForm(true)}>
             <CiLogin size={20} color="rgb(244, 197, 80)" className="icon" />
             Log in
           </StyledButtonLogInOut >
-          <StyledButtonRegistration onClick={() => navigateTo("register")}>Registartion</StyledButtonRegistration>
+          <StyledButtonRegistration onClick={() => setRegisterVisibleForm(true)}>Registartion</StyledButtonRegistration>
         </>
       ) : (
         <>
@@ -37,7 +38,7 @@ export default function ButtonAuth({ user, authUser}: ButtonAuthType) {
               <NavigationLink path={path} name={name} key={name} />
             ))}
           </ul>
-          <StyledButtonLogInOut onClick={() => authUser()}>
+          <StyledButtonLogInOut>
             <CiLogout size={20} color="rgb(244, 197, 80)" className="icon" />
             Log Out
           </StyledButtonLogInOut>

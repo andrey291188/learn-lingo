@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { DataType } from "./typeDataCard";
-import { defaultImg } from "./Details";
+import Details, { defaultImg } from "./Details";
 import { StyledCardRender } from "./RenderCard.styled";
 import { IoBookOutline } from "react-icons/io5";
 import { FaStar } from "react-icons/fa6";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
-
+import Modal from "../Modal/Modal";
+import TrialLesson from "../Forms/TrialLesson/TrialLesson";
 
 interface PreviewType {
   data: DataType;
-  setVisibleDetails: (id: string) => void;
 }
 
-export default function Preview({ data, setVisibleDetails }: PreviewType) {
+export default function Preview({ data }: PreviewType) {
+const [visibleFormTrial, setVisibleFormTria] = useState(false)
+const [visibleDetails, setVisibleDetails] = useState(false)
 
 const obJectIncluded = (id_: string) => {
   return false
@@ -28,10 +30,13 @@ const handleDeleteFavorite = (id: string) => {
   // dispatch(deleteFavorit(id))
 }
 
+const handleClick = (value: boolean) => {
+  setVisibleFormTria(value)
+}
+
 const isOnline = () => {
   return Math.random() < 0.5;
 }
-
 
   return (
     <StyledCardRender>
@@ -97,11 +102,12 @@ const isOnline = () => {
               ))}
             </p>
           </li>
-          <li>
-            <button type="button" className="underline" onClick={() => setVisibleDetails(data.id)}>
+         {!visibleDetails && <li>
+            <button type="button" className="underline" onClick={() => setVisibleDetails(true)}>
               Read more
             </button>
-          </li>
+          </li>}
+        {visibleDetails && <Details data={data} setVisibleDetails={setVisibleDetails}/>}
         </ul>
         <ul className="list-level">
           {data.levels.map((data) => (
@@ -110,6 +116,11 @@ const isOnline = () => {
             </li>
           ))}
         </ul>
+        {visibleDetails && <button onClick={() => handleClick(true)}>Book trial lesson</button>}
+        {visibleFormTrial && 
+        <Modal toggleModal={setVisibleFormTria}>
+          <TrialLesson data={data} toggleModal={setVisibleFormTria}/>
+        </Modal>}
       </div>
     </StyledCardRender>
   );
